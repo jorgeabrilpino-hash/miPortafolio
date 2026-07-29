@@ -1,0 +1,82 @@
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,html}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        surface: '#131317',
+        'surface-dim': '#131317',
+        'surface-bright': '#39393d',
+        'surface-container-lowest': '#0e0e12',
+        'surface-container-low': '#1b1b1f',
+        'surface-container': '#1f1f23',
+        'surface-container-high': '#2a292e',
+        'surface-container-highest': '#353439',
+        'on-surface': '#e5e1e7',
+        'on-surface-variant': '#ccc4d0',
+        'inverse-surface': '#e5e1e7',
+        'inverse-on-surface': '#303034',
+        outline: '#958e9a',
+        'outline-variant': '#4a454f',
+        'surface-tint': '#d6baff',
+        primary: '#ecdcff',
+        'on-primary': '#3b245e',
+        'primary-container': '#d6baff',
+        'on-primary-container': '#5e4783',
+        'inverse-primary': '#6b5390',
+        secondary: '#d0bcff',
+        'on-secondary': '#3c0091',
+        'secondary-container': '#571bc1',
+        'on-secondary-container': '#c4abff',
+        tertiary: '#c9e6ff',
+        'on-tertiary': '#00344d',
+        'tertiary-container': '#89ceff',
+        'on-tertiary-container': '#00587f',
+        error: '#ffb4ab',
+        'on-error': '#690005',
+        'error-container': '#93000a',
+        'on-error-container': '#ffdad6',
+        'primary-fixed': '#ecdcff',
+        'primary-fixed-dim': '#d6baff',
+        'on-primary-fixed': '#250c48',
+        'on-primary-fixed-variant': '#523b76',
+        'secondary-fixed': '#e9ddff',
+        'secondary-fixed-dim': '#d0bcff',
+        'on-secondary-fixed': '#23005c',
+        'on-secondary-fixed-variant': '#5516be',
+        'tertiary-fixed': '#c9e6ff',
+        'tertiary-fixed-dim': '#89ceff',
+        'on-tertiary-fixed': '#001e2f',
+        'on-tertiary-fixed-variant': '#004c6e',
+        background: '#050508',
+        'on-background': '#e5e1e7',
+        'surface-variant': '#353439',
+        'surface-deep': '#0e0e12',
+        'surface-main': '#131317',
+        'glow-violet': 'rgba(214, 186, 255, 0.3)',
+        'glass-bg': 'rgba(19, 19, 23, 0.6)'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'sans-serif'],
+        mono: ['Geist', 'monospace']
+      },
+      borderRadius: {
+        DEFAULT: '1rem',
+        sm: '0.5rem',
+        md: '1.5rem',
+        lg: '2rem',
+        xl: '3rem',
+        full: '9999px'
+      },
+      spacing: {
+        unit: '4px',
+        gutter: '24px',
+        'margin-desktop': '80px',
+        'margin-mobile': '20px',
+        'container-max': '1440px'
+      }
+    }
+  },
+  plugins: []
+};
