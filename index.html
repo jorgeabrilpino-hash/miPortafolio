@@ -1033,81 +1033,122 @@
       <!-- FRAME 5: JF PINO ABRIL - PROYECTOS DE SOFTWARE -->
       <!-- ========================================== -->
       <section id="frame-software" class="view-frame hidden-frame pt-24 pl-0 md:pl-64 min-h-screen">
-        <div class="max-w-container-max mx-auto px-6 md:px-12 py-8">
-          <header class="mb-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-              <div>
-                <span class="text-secondary font-mono text-xs uppercase tracking-widest">Repository</span>
-                <h1 class="font-display text-4xl md:text-5xl font-bold text-on-surface mt-1">Software Projects</h1>
-                <p class="text-on-surface-variant text-body-lg max-w-2xl mt-3">Exploring the frontier of low-level systems, cloud infrastructure, and distributed intelligence.</p>
-              </div>
-              <button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-glow-violet active:scale-95 transition-all text-xs w-fit">
-                <span class="material-symbols-outlined text-sm">add</span>
-                <span>New System</span>
-              </button>
-            </div>
-
-            <!-- Bento Filter Section -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div class="md:col-span-1 glass-panel p-6 rounded-2xl quantum-gradient border border-outline-variant/20">
-                <h4 class="font-mono text-xs uppercase tracking-widest text-outline mb-3">By Language</h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-mono">Rust</span>
-                  <span class="px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 text-on-surface-variant text-xs font-mono hover:border-primary/50 cursor-pointer">Python</span>
-                  <span class="px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 text-on-surface-variant text-xs font-mono hover:border-primary/50 cursor-pointer">C++</span>
-                  <span class="px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 text-on-surface-variant text-xs font-mono hover:border-primary/50 cursor-pointer">Go</span>
+        <div class="max-w-container-max mx-auto px-6 md:px-12 py-8 flex flex-col min-h-[calc(100vh-6rem)] justify-between">
+          <div>
+            <header class="mb-10">
+              <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                <div>
+                  <span class="text-secondary font-mono text-xs uppercase tracking-widest">Repositorios GitHub</span>
+                  <h1 class="font-display text-4xl md:text-5xl font-bold text-on-surface mt-1">Proyectos de Software</h1>
+                  <p class="text-on-surface-variant text-body-lg max-w-2xl mt-3">Sistemas de backend empresarial, arquitectura limpia, inteligencia artificial y simuladores 3D.</p>
                 </div>
               </div>
-              <div class="md:col-span-3 glass-panel p-6 rounded-2xl flex items-center overflow-x-auto no-scrollbar">
-                <h4 class="font-mono text-xs uppercase tracking-widest text-outline mr-6 whitespace-nowrap">By Domain:</h4>
-                <div class="flex gap-3">
-                  <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary-container/30 text-on-secondary-container border border-secondary/40 text-xs whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">memory</span>
-                    Operating Systems
-                  </button>
-                  <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-variant/30 text-on-surface-variant border border-outline-variant/20 hover:border-primary/40 text-xs whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">psychology</span>
-                    AI / ML
-                  </button>
-                  <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-variant/30 text-on-surface-variant border border-outline-variant/20 hover:border-primary/40 text-xs whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">cloud_done</span>
-                    Cloud Infra
-                  </button>
-                </div>
-              </div>
-            </div>
-          </header>
 
-          <!-- Software Cards Grid (Real GitHub Projects) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              <div class="h-44 relative overflow-hidden">
-                <img src="/assets/nexus-os.jpg" alt="Nova Compiler" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-deep to-transparent opacity-60"></div>
-                <span class="absolute top-4 right-4 bg-surface-deep/80 backdrop-blur-md border border-outline-variant/20 px-3 py-1 rounded-full text-xs font-mono text-secondary">Public Beta</span>
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="font-display text-xl font-bold text-on-surface mb-2">Nova Compiler</h3>
-                <p class="text-on-surface-variant text-xs mb-4 leading-relaxed">Next-gen static analysis and compilation toolchain designed for formal verification and deterministic binary output.</p>
-                <div class="grid grid-cols-2 gap-3 mb-6">
-                  <div class="bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/10">
-                    <p class="text-outline text-[10px] font-mono">Optim. Level</p>
-                    <p class="text-on-surface font-bold text-sm">O3 Max</p>
-                  </div>
-                  <div class="bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/10">
-                    <p class="text-outline text-[10px] font-mono">Verify Rate</p>
-                    <p class="text-on-surface font-bold text-sm">10k L/s</p>
+              <!-- Bento Filter Section -->
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="md:col-span-1 glass-panel p-6 rounded-2xl quantum-gradient border border-outline-variant/20">
+                  <h4 class="font-mono text-xs uppercase tracking-widest text-outline mb-3">Lenguajes</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-mono">Java</span>
+                    <span class="px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 text-on-surface-variant text-xs font-mono">Python</span>
+                    <span class="px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 text-on-surface-variant text-xs font-mono">TypeScript</span>
                   </div>
                 </div>
-                <div class="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
-                  <span class="text-xs font-mono text-outline">LLVM Toolchain</span>
-                  <button class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn">
-                    <span>Clone Repo</span>
-                    <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                  </button>
+                <div class="md:col-span-3 glass-panel p-6 rounded-2xl flex items-center overflow-x-auto no-scrollbar">
+                  <h4 class="font-mono text-xs uppercase tracking-widest text-outline mr-6 whitespace-nowrap">Categorías:</h4>
+                  <div class="flex gap-3">
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary-container/30 text-on-secondary-container border border-secondary/40 text-xs whitespace-nowrap">
+                      <span class="material-symbols-outlined text-sm">terminal</span>
+                      Backend APIs
+                    </button>
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-variant/30 text-on-surface-variant border border-outline-variant/20 text-xs whitespace-nowrap">
+                      <span class="material-symbols-outlined text-sm">3d_rotation</span>
+                      Simulation &amp; Graphics
+                    </button>
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-variant/30 text-on-surface-variant border border-outline-variant/20 text-xs whitespace-nowrap">
+                      <span class="material-symbols-outlined text-sm">security</span>
+                      Auth &amp; Security
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <!-- Software Cards Grid (Real GitHub Projects) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <!-- Card 1: Library Loan Management System -->
+              <div class="glass-panel rounded-2xl overflow-hidden border border-outline-variant/20 transition-all duration-500 flex flex-col group hover:border-primary/40">
+                <div class="h-44 relative overflow-hidden bg-black">
+                  <img src="/assets/aether-engine.jpg" alt="Library Loan Management" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface-deep to-transparent opacity-60"></div>
+                  <span class="absolute top-4 right-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary px-3 py-1 rounded-full text-xs font-mono font-bold">Java / Maven</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="font-display text-xl font-bold text-on-surface mb-2">Library Loan Management System</h3>
+                  <p class="text-on-surface-variant text-xs mb-4 leading-relaxed">Sistema empresarial de gestión de préstamos bibliotecarios en Java con servicios de dominio, pruebas de integración y arquitectura limpia.</p>
+                  <div class="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
+                    <span class="text-xs font-mono text-outline">GitHub Repo</span>
+                    <a href="https://github.com/jorgeabrilpino-hash/library-loan-management-java" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn">
+                      <span>Ver Código</span>
+                      <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Django Role-Based Auth API -->
+              <div class="glass-panel rounded-2xl overflow-hidden border border-outline-variant/20 transition-all duration-500 flex flex-col group hover:border-primary/40">
+                <div class="h-44 relative overflow-hidden bg-black">
+                  <img src="/assets/quantum-hero-sphere.png" alt="Django Role Auth API" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface-deep to-transparent opacity-60"></div>
+                  <span class="absolute top-4 right-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary px-3 py-1 rounded-full text-xs font-mono font-bold">Python / Django</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="font-display text-xl font-bold text-on-surface mb-2">Django Role-Based Auth API</h3>
+                  <p class="text-on-surface-variant text-xs mb-4 leading-relaxed">API RESTful en Python y Django REST Framework con autenticación JWT, jerarquía de roles de usuario y permisos dinámicos.</p>
+                  <div class="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
+                    <span class="text-xs font-mono text-outline">GitHub Repo</span>
+                    <a href="https://github.com/jorgeabrilpino-hash/django-role-auth-api" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn">
+                      <span>Ver Código</span>
+                      <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: 3D Simulator Engine -->
+              <div class="glass-panel rounded-2xl overflow-hidden border border-outline-variant/20 transition-all duration-500 flex flex-col group hover:border-primary/40">
+                <div class="h-44 relative overflow-hidden bg-black">
+                  <img src="/assets/nexus-os.jpg" alt="3D Simulator Engine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface-deep to-transparent opacity-60"></div>
+                  <span class="absolute top-4 right-4 bg-tertiary/20 backdrop-blur-md border border-tertiary/30 text-tertiary px-3 py-1 rounded-full text-xs font-mono font-bold">TypeScript / 3D</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="font-display text-xl font-bold text-on-surface mb-2">3D Simulator Engine</h3>
+                  <p class="text-on-surface-variant text-xs mb-4 leading-relaxed">Motor de simulación y gráficos 3D interactivos en TypeScript centrado en cálculos matriciales y transformaciones WebGL.</p>
+                  <div class="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
+                    <span class="text-xs font-mono text-outline">GitHub Repo</span>
+                    <a href="https://github.com/jorgeabrilpino-hash/3D_simulator" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn">
+                      <span>Ver Código</span>
+                      <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Section Footer -->
+          <footer class="w-full py-8 border-t border-outline-variant/10 bg-surface-container-lowest/50 rounded-2xl mt-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center px-6 max-w-container-max mx-auto gap-4">
+              <div class="font-display text-base font-bold text-on-surface">J.F.P.A</div>
+              <p class="text-xs text-on-surface-variant">© 2026 Jorge Fabrissio Pino Abril. Todos los derechos reservados.</p>
+              <div class="flex gap-4 text-xs font-mono">
+                <a href="https://github.com/jorgeabrilpino-hash" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors">GitHub</a>
+                <a href="mailto:jorgeabril.pino@gmail.com" class="text-on-surface-variant hover:text-primary transition-colors">Correo</a>
+              </div>
+            </div>
+          </footer>
         </div>
       </section>
 
