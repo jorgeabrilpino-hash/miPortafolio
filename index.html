@@ -1,1213 +1,508 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jorge Fabrissio Pino Abril | Quantum Portfolio & Projects</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Geist:wght@100..900&display=swap" rel="stylesheet">
-  <!-- Material Symbols -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jorge Pino Abril — Desarrollador de software · IA y backend</title>
+  <meta name="description" content="Portafolio de Jorge Fabrissio Pino Abril, desarrollador de software en Arequipa, Perú. Productos con IA aplicada: ContaAI, ChillDrive, Qillqa, EchoTrap, TalentoPrueba y La Hora de la IA." />
+  <meta name="theme-color" content="#07070b" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jorge Pino Abril — Desarrollador de software" />
+  <meta property="og:description" content="Construyo productos con IA aplicada, de la idea al despliegue. Arequipa, Perú." />
+  <meta property="og:image" content="/assets/projects/contaai.jpg" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
-  <link rel="stylesheet" href="/src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    document.documentElement.classList.add('js');
+    // If main.js never runs, show everything after 2.5s instead of leaving hidden content.
+    window.__animFallback = setTimeout(function () { document.documentElement.classList.add('no-anim'); }, 2500);
+  </script>
+  <link rel="stylesheet" href="/src/style.css" />
 </head>
-<body class="bg-background text-on-surface font-sans antialiased selection:bg-primary/30 selection:text-primary min-h-screen">
+<body>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2L9 8.5Z" fill="currentColor"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.5 9h3v11h-3V9Zm1.5-5a1.75 1.75 0 1 1 0 3.5A1.75 1.75 0 0 1 6 4Zm4 5h2.9v1.5h.04c.4-.76 1.380-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V20h-3v-5.3c0-1.26-.02-2.9-1.76-2.9-1.77 0-2.04 1.38-2.04 2.8V20H10V9Z" fill="currentColor"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.370-1.34-3.37-1.34-.45-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.090.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
 
-  <!-- ========================================== -->
-  <!-- MAIN APP CONTAINER                         -->
-  <!-- ========================================== -->
-  <div id="app" class="relative min-h-screen flex flex-col">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <!-- GLOBAL SIDEBAR (Visible for Dashboard, Web, Mobile, Software frames) -->
-    <aside id="main-sidebar" class="fixed left-0 top-0 h-screen w-64 z-40 bg-surface-container/70 backdrop-blur-xl border-r border-outline-variant/10 shadow-2xl hidden flex-col pt-20 pb-8 px-4 gap-2 transition-all duration-300">
-      <div class="px-4 mb-6 pt-2">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-secondary-container/40 flex items-center justify-center border border-primary/30 overflow-hidden shadow-glow-violet">
-            <img src="/assets/quantum-about-face.png" alt="Jorge Fabrissio" class="w-full h-full object-cover">
-          </div>
-          <div class="overflow-hidden">
-            <h3 class="font-bold text-primary text-body-md leading-none truncate">JF Pino Abril</h3>
-            <p class="text-outline text-label-sm mt-1 font-mono">Lead Architect</p>
-          </div>
-        </div>
-      </div>
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#top" class="nav__brand" aria-label="Ir al inicio">
+        <img src="/assets/wolf.webp" alt="" width="28" height="37" />
+        <span>Jorge Pino</span>
+      </a>
 
-      <nav class="flex flex-col gap-1 flex-1">
-        <button data-target-view="portfolio" class="nav-btn flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-DEFAULT hover:bg-surface-variant/40 hover:text-on-surface transition-all">
-          <span class="material-symbols-outlined">auto_awesome</span>
-          <span class="text-label-sm font-mono">Quantum Portfolio</span>
-        </button>
-
-        <button data-target-view="dashboard" class="nav-btn flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-DEFAULT hover:bg-surface-variant/40 hover:text-on-surface transition-all">
-          <span class="material-symbols-outlined">dashboard</span>
-          <span class="text-label-sm font-mono">Plataforma</span>
-        </button>
-
-        <button data-target-view="web" class="nav-btn flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-DEFAULT hover:bg-surface-variant/40 hover:text-on-surface transition-all">
-          <span class="material-symbols-outlined">language</span>
-          <span class="text-label-sm font-mono">Páginas Web</span>
-        </button>
-
-        <button data-target-view="mobile" class="nav-btn flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-DEFAULT hover:bg-surface-variant/40 hover:text-on-surface transition-all">
-          <span class="material-symbols-outlined">smartphone</span>
-          <span class="text-label-sm font-mono">Proyectos Móviles</span>
-        </button>
-
-        <button data-target-view="software" class="nav-btn flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-DEFAULT hover:bg-surface-variant/40 hover:text-on-surface transition-all">
-          <span class="material-symbols-outlined">terminal</span>
-          <span class="text-label-sm font-mono">Proyectos Software</span>
-        </button>
-
-        <div class="pt-4 border-t border-outline-variant/10 mt-auto space-y-2">
-          <button id="btn-new-project-side" class="w-full bg-primary text-on-primary font-bold py-3 px-6 rounded-full transition-all hover:shadow-[0_0_20px_rgba(236,220,255,0.4)] active:scale-95 text-sm flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined text-sm">add</span>
-            New Project
-          </button>
-          
-          <button id="btn-open-specs" class="w-full flex items-center gap-3 px-4 py-2.5 rounded-DEFAULT text-on-surface-variant/80 hover:text-on-surface hover:bg-surface-variant/30 text-sm">
-            <span class="material-symbols-outlined text-sm">database</span>
-            <span class="text-label-sm font-mono">Technical Specs</span>
-          </button>
-        </div>
+      <nav class="nav__links" aria-label="Principal">
+        <a href="#sobre-mi" data-nav>Sobre mí</a>
+        <a href="#proyectos" data-nav>Proyectos</a>
+        <a href="#experiencia" data-nav>Experiencia</a>
+        <a href="#comunidad" data-nav>Comunidad</a>
+        <a href="#stack" data-nav>Stack</a>
       </nav>
 
-      <div class="pt-4 border-t border-outline-variant/10 flex items-center gap-3 px-2">
-        <div class="w-9 h-9 rounded-full bg-surface-variant overflow-hidden border border-outline-variant/30">
-          <img src="/assets/quantum-about-face.png" class="w-full h-full object-cover" alt="Profile">
-        </div>
-        <div class="overflow-hidden text-left">
-          <p class="text-on-surface text-xs font-bold truncate">Jorge Fabrissio</p>
-          <p class="text-on-surface-variant/60 text-[10px] truncate font-mono">pino.abril@dev.io</p>
-        </div>
-      </div>
-    </aside>
-
-    <!-- GLOBAL TOP NAVBAR (Sticky header for all views) -->
-    <header class="fixed top-0 left-0 right-0 z-50 h-20 px-4 md:px-8 flex justify-between items-center bg-glass-bg backdrop-blur-xl border-b border-outline-variant/10 transition-all duration-300">
-      <div class="flex items-center gap-6">
-        <!-- Sidebar Toggle Mobile/Desktop -->
-        <button id="sidebar-toggle" class="p-2 rounded-full hover:bg-surface-variant/30 text-on-surface-variant hover:text-primary transition-colors">
-          <span class="material-symbols-outlined">menu</span>
+      <div class="nav__actions">
+        <a href="#contacto" class="btn btn--primary btn--sm" data-magnetic>Contacto</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span>
         </button>
-
-        <!-- Logo / Brand -->
-        <button data-target-view="portfolio" class="flex items-center gap-2.5 group text-left">
-          <img src="/assets/wolf-logo.png" alt="Quantum Wolf Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform filter drop-shadow-[0_0_10px_rgba(214,186,255,0.8)]">
-          <span class="font-bold text-xl text-primary tracking-tight font-display">J.F.P.A</span>
-        </button>
-
-        <!-- View Navigation Quick Tabs -->
-        <nav id="top-nav-tabs" class="hidden lg:flex items-center gap-1 bg-surface-container-low/60 p-1.5 rounded-full border border-outline-variant/20 ml-4">
-          <button data-target-view="portfolio" class="nav-tab px-4 py-1.5 rounded-full text-xs font-medium transition-all text-on-surface-variant hover:text-primary">Portfolio</button>
-          <button data-target-view="dashboard" data-role-req="owner" class="nav-tab px-4 py-1.5 rounded-full text-xs font-medium transition-all text-on-surface-variant hover:text-primary">Plataforma</button>
-          <button data-target-view="web" class="nav-tab px-4 py-1.5 rounded-full text-xs font-medium transition-all text-on-surface-variant hover:text-primary">Páginas Web</button>
-          <button data-target-view="mobile" class="nav-tab px-4 py-1.5 rounded-full text-xs font-medium transition-all text-on-surface-variant hover:text-primary">Móviles</button>
-          <button data-target-view="software" class="nav-tab px-4 py-1.5 rounded-full text-xs font-medium transition-all text-on-surface-variant hover:text-primary">Software</button>
-        </nav>
-      </div>
-
-      <!-- Right Header Actions -->
-      <div class="flex items-center gap-3">
-        <div class="relative hidden sm:block">
-          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-          <input id="global-search-input" type="text" placeholder="Buscar proyectos..." class="bg-surface-container/80 border border-outline-variant/20 rounded-full pl-9 pr-4 py-1.5 text-xs text-on-surface focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/40 w-48 lg:w-64 transition-all">
-        </div>
-
-        <button id="btn-notifications" class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant/30 relative">
-          <span class="material-symbols-outlined text-xl">notifications</span>
-          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full animate-ping"></span>
-        </button>
-
-        <button id="btn-connect" class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-bold text-xs active:scale-95 transition-all shadow-glow-violet hover:brightness-110">
-          Contacto
-        </button>
-
-        <!-- Auth Header Control Buttons -->
-        <div id="auth-header-controls" class="flex items-center gap-2 border-l border-outline-variant/20 pl-3">
-          <button id="btn-open-login" class="bg-primary/20 text-primary border border-primary/40 px-3.5 py-1.5 rounded-full font-mono text-xs hover:bg-primary hover:text-on-primary transition-all flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-sm">lock</span>
-            <span>Acceder</span>
-          </button>
-          
-          <div id="owner-profile-badge" class="hidden items-center gap-2 bg-surface-container border border-primary/30 px-3 py-1 rounded-full">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs font-mono font-bold text-primary">Jorge (Admin)</span>
-            <button id="btn-logout" class="ml-1 text-on-surface-variant hover:text-red-400 transition-colors p-1 flex items-center" title="Cerrar Sesión">
-              <span class="material-symbols-outlined text-sm">logout</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- CONTENT WRAPPER -->
-    <div id="content-container" class="flex-1 transition-all duration-300">
-
-      <!-- ========================================== -->
-      <!-- FRAME 1: JORGE FABRISSIO PINO ABRIL - QUANTUM PORTFOLIO -->
-      <!-- ========================================== -->
-      <section id="frame-portfolio" class="view-frame active-frame pt-20">
-        <!-- Hero Section -->
-        <div class="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-16">
-          <!-- Background Quantum Sphere Asset -->
-          <div class="absolute inset-0 z-0 overflow-hidden">
-            <img src="/assets/quantum-hero-sphere.png" alt="Quantum Background" class="w-full h-full object-cover object-center">
-          </div>
-          
-          <div class="relative z-10 text-center px-6 md:px-12 max-w-4xl mx-auto">
-            <div class="flex items-center justify-center gap-2 mb-6">
-              <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
-              <span class="font-mono text-xs uppercase tracking-widest text-on-surface-variant">DÉCIMO SUPERIOR — TECSUP AREQUIPA</span>
-            </div>
-
-            <h1 class="font-display text-5xl md:text-7xl lg:text-[90px] font-extrabold text-on-surface mb-6 tracking-tight leading-[1.05] drop-shadow-[0_0_20px_rgba(214,186,255,0.4)]">
-              Jorge Fabrissio<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-bright">Pino Abril</span>
-            </h1>
-
-            <p class="font-display text-xl md:text-2xl font-semibold text-on-surface-variant mb-6 tracking-wide opacity-90">
-              DISEÑO Y DESARROLLO DE SOFTWARE &amp; INTELIGENCIA ARTIFICIAL
-            </p>
-
-            <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-              Estudiante de 5to ciclo en <strong class="text-on-surface font-semibold">TECSUP</strong> (Décimo Superior). Especialista en desarrollo web con <strong class="text-primary font-semibold">React, Next.js, Python, Java</strong> e integración de herramientas IA (Desarrollo con IA: de 0 a producción). Liderazgo técnico con metodologías ágiles Scrum.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <button data-target-view="dashboard" class="group relative px-8 py-4 bg-primary text-on-primary font-bold rounded-full overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(214,186,255,0.6)] active:scale-95 text-sm flex items-center gap-2">
-                <span>Explorar Plataforma &amp; Proyectos</span>
-                <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </button>
-              <button id="btn-hero-contact" class="px-8 py-4 rounded-full border border-primary/40 text-primary font-bold text-sm hover:bg-primary/10 transition-all flex items-center gap-2">
-                <span class="material-symbols-outlined text-lg">call</span>
-                <span>Contacto (+51 937 395 614)</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Scroll Indicator -->
-          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-            <span class="font-mono text-[10px] uppercase tracking-[0.25em]">Explore CV</span>
-            <div class="w-px h-10 bg-gradient-to-b from-primary to-transparent"></div>
-          </div>
-
-          <!-- Crystal Wolf Logo Emblem Overlay -->
-          <div class="absolute bottom-8 right-8 z-20 flex items-center gap-3 bg-surface-container/60 backdrop-blur-xl p-2.5 px-4 rounded-full border border-primary/40 shadow-glow-violet hover:scale-105 transition-transform cursor-pointer">
-            <img src="/assets/wolf-logo.png" alt="Crystal Wolf Logo" class="w-10 h-10 md:w-14 md:h-14 object-contain filter drop-shadow-[0_0_20px_rgba(214,186,255,0.9)] animate-pulse-glow">
-            <span class="font-mono text-xs font-bold text-primary tracking-widest uppercase hidden sm:inline-block">QUANTUM ARCHITECT</span>
-          </div>
-        </div>
-
-        <!-- Skills & Core Architecture Section -->
-        <div class="bg-black/90 py-24 relative overflow-hidden border-t border-outline-variant/10">
-          <div class="max-w-container-max mx-auto px-6 md:px-12">
-            <div class="mb-16 text-center">
-              <h2 class="font-display text-3xl md:text-4xl font-bold text-primary mb-3">Habilidades Técnicas &amp; Stack</h2>
-              <p class="text-on-surface-variant text-sm font-mono">Dominio técnico de lenguajes, frameworks y bases de datos según CV profesional</p>
-              <div class="w-20 h-1 bg-primary mx-auto rounded-full mt-3"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <!-- Languages -->
-              <div class="glass-panel p-8 rounded-3xl group hover:border-primary/40 transition-all duration-500">
-                <h3 class="font-display text-2xl font-semibold mb-6 flex items-center gap-3 text-on-surface">
-                  <span class="material-symbols-outlined text-primary">terminal</span>
-                  Lenguajes
-                </h3>
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">Python</span>
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20 font-mono">Intermedio / IA</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">Java</span>
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20 font-mono">Intermedio</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">SQL &amp; PostgreSQL</span>
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20 font-mono">Intermedio</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">JavaScript &amp; HTML/CSS</span>
-                    <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold border border-secondary/20 font-mono">Web Dev</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Frameworks -->
-              <div class="glass-panel p-8 rounded-3xl group hover:border-primary/40 transition-all duration-500">
-                <h3 class="font-display text-2xl font-semibold mb-6 flex items-center gap-3 text-on-surface">
-                  <span class="material-symbols-outlined text-primary">layers</span>
-                  Frameworks &amp; DB
-                </h3>
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">React &amp; Next.js</span>
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20 font-mono">Frontend</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">Django &amp; Laravel</span>
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20 font-mono">Backend</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">MongoDB &amp; MySQL</span>
-                    <span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-bold border border-tertiary/20 font-mono">NoSQL &amp; RDBMS</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3.5 rounded-2xl bg-surface-container-lowest/50 border border-outline-variant/10">
-                    <span class="text-body-lg font-medium">SQLite</span>
-                    <span class="px-3 py-1 rounded-full bg-surface-variant text-on-surface-variant text-xs font-bold font-mono">Embedded</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tooling -->
-              <div class="glass-panel p-8 rounded-3xl group hover:border-primary/40 transition-all duration-500">
-                <h3 class="font-display text-2xl font-semibold mb-6 flex items-center gap-3 text-on-surface">
-                  <span class="material-symbols-outlined text-primary">construction</span>
-                  Herramientas &amp; IA
-                </h3>
-                <div class="flex flex-wrap gap-2.5">
-                  <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:border-primary/50 transition-colors">
-                    <span class="material-symbols-outlined text-sm">smart_toy</span>
-                    <span class="font-mono text-xs">Claude Code</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:border-primary/50 transition-colors">
-                    <span class="material-symbols-outlined text-sm">box</span>
-                    <span class="font-mono text-xs">Docker</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:border-primary/50 transition-colors">
-                    <span class="material-symbols-outlined text-sm">account_tree</span>
-                    <span class="font-mono text-xs">Git / GitHub</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:border-primary/50 transition-colors">
-                    <span class="material-symbols-outlined text-sm">edit</span>
-                    <span class="font-mono text-xs">Cursor</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:border-primary/50 transition-colors">
-                    <span class="material-symbols-outlined text-sm">draw</span>
-                    <span class="font-mono text-xs">Figma (UX/UI)</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:border-primary/50 transition-colors">
-                    <span class="material-symbols-outlined text-sm">code</span>
-                    <span class="font-mono text-xs">VS Code</span>
-                  </div>
-                  <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:border-primary/50 transition-colors">
-                    <span class="material-symbols-outlined text-sm">terminal</span>
-                    <span class="font-mono text-xs">Openclaw</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- About Me Section with Interlocking Notch -->
-        <section class="relative w-full min-h-screen overflow-hidden bg-background flex items-stretch">
-          <div class="w-full grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen relative">
-            <!-- Left Side: Purple Card -->
-            <div class="relative z-20 flex flex-col justify-center p-10 md:p-20 lg:p-24 bg-[#8b5cf6] text-white">
-              <div class="inline-block w-fit px-4 py-1.5 rounded-full border border-white/30 text-white/90 font-mono text-xs uppercase tracking-widest mb-6">
-                Líder UX/UI &amp; Desarrollador de Software — Tecsup
-              </div>
-              <h2 class="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-                Jorge Fabrissio<br><span class="text-primary-container italic font-normal">Pino Abril</span>
-              </h2>
-              <p class="text-body-lg md:text-xl leading-relaxed mb-8 text-white/90 font-light max-w-xl">
-                Estudiante del <strong class="font-bold text-white">Décimo Superior</strong> en la carrera de Diseño y Desarrollo de Software (TECSUP Arequipa). Caracterizado por liderazgo en proyectos académicos, comunicación entre diseñadores y desarrolladores, orientación a resultados y enfoque en Inteligencia Artificial y Ciberseguridad.
-              </p>
-
-              <!-- Grid of CV Highlights -->
-              <div class="grid grid-cols-2 gap-4 mb-8 text-xs font-mono">
-                <div class="bg-black/20 p-3 rounded-xl border border-white/20">
-                  <p class="text-white/70">Ubicación</p>
-                  <p class="font-bold text-white text-sm">Arequipa, Perú</p>
-                </div>
-                <div class="bg-black/20 p-3 rounded-xl border border-white/20">
-                  <p class="text-white/70">Disponibilidad</p>
-                  <p class="font-bold text-green-300 text-sm">Inmediata</p>
-                </div>
-                <div class="bg-black/20 p-3 rounded-xl border border-white/20">
-                  <p class="text-white/70">Cisco Certification</p>
-                  <p class="font-bold text-white text-sm">PCAP Python &amp; Security</p>
-                </div>
-                <div class="bg-black/20 p-3 rounded-xl border border-white/20">
-                  <p class="text-white/70">BIG School</p>
-                  <p class="font-bold text-white text-sm">Desarrollo IA: 0 a Producción</p>
-                </div>
-              </div>
-
-              <div class="flex gap-4 items-center">
-                <div class="h-px flex-grow bg-gradient-to-r from-white/50 to-transparent"></div>
-                <span class="material-symbols-outlined text-white text-3xl">verified_user</span>
-              </div>
-              <!-- Interlocking Notch cutout shape -->
-              <div class="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-24 bg-[#8b5cf6] z-30 rounded-r-full"></div>
-            </div>
-
-            <!-- Right Side: Quantum Image Asset -->
-            <div class="relative z-10 bg-[#050508] overflow-hidden flex items-center justify-center min-h-[500px]">
-              <img src="/assets/quantum-about-face.png" alt="Quantum Visual Asset" class="w-full h-full object-cover opacity-95 hover:scale-105 transition-all duration-700 filter contrast-[1.12] brightness-95 saturate-[1.2] drop-shadow-[0_0_40px_rgba(139,92,246,0.35)]">
-              <!-- Vignette & Atmospheric Masking Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-r from-[#8b5cf6]/40 via-transparent to-[#050508]/80 pointer-events-none"></div>
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(5,5,8,0.6)_100%)] pointer-events-none"></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Selected Work Preview Section (CV Projects & Experiencia) -->
-        <div class="py-24 bg-background border-t border-outline-variant/10">
-          <div class="max-w-container-max mx-auto px-6 md:px-12">
-            <div class="flex justify-between items-end mb-12">
-              <div>
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface">Experiencia &amp; Proyectos Destacados</h2>
-                <p class="text-on-surface-variant mt-1">Proyectos académicos y soluciones tecnológicas de alto impacto.</p>
-              </div>
-              <button data-target-view="web" class="hidden md:flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all text-sm">
-                Ver Plataforma <span class="material-symbols-outlined">trending_flat</span>
-              </button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <!-- Proyecto 1: Convento Santa Teresa -->
-              <div data-target-view="web" class="group cursor-pointer glass-panel p-6 rounded-3xl border border-outline-variant/20 hover:border-primary/50 transition-all">
-                <div class="aspect-[16/10] bg-surface-container-highest rounded-2xl mb-6 overflow-hidden relative shadow-lg">
-                  <div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/20 transition-colors duration-500 z-10"></div>
-                  <img src="/assets/aether-engine.jpg" alt="Convento Santa Teresa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                  <span class="absolute top-3 left-3 z-20 bg-primary text-on-primary font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase">Líder UX/UI</span>
-                </div>
-                <div class="flex justify-between items-start mb-2">
-                  <div>
-                    <h3 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Convento Santa Teresa (Tecsup)</h3>
-                    <p class="text-on-surface-variant text-xs mt-1">Líder de diseño UX/UI. Módulo de alquileres, tablas de registro interactivo en Figma y diagramas entidad-relación.</p>
-                  </div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-outline-variant/10 flex justify-between items-center text-xs font-mono text-outline">
-                  <span>Set. 2025 - Nov. 2025</span>
-                  <span class="text-primary font-bold">Figma / Fullstack</span>
-                </div>
-              </div>
-
-              <!-- Proyecto 2: Hackathon Ciberseguridad -->
-              <div data-target-view="mobile" class="group cursor-pointer glass-panel p-6 rounded-3xl border border-outline-variant/20 hover:border-primary/50 transition-all">
-                <div class="aspect-[16/10] bg-surface-container-highest rounded-2xl mb-6 overflow-hidden relative shadow-lg">
-                  <div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/20 transition-colors duration-500 z-10"></div>
-                  <img src="/assets/nexus-os.jpg" alt="Hackathon Ciberseguridad" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                  <span class="absolute top-3 left-3 z-20 bg-secondary text-on-secondary font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase">Cyber Challenge</span>
-                </div>
-                <div class="flex justify-between items-start mb-2">
-                  <div>
-                    <h3 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Perú Hub Digital — Ciberseguridad</h3>
-                    <p class="text-on-surface-variant text-xs mt-1">"Roba el Control, No los Datos". Solución tecnológica para prevención de fraudes en dispositivos móviles.</p>
-                  </div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-outline-variant/10 flex justify-between items-center text-xs font-mono text-outline">
-                  <span>Oct. 2025 - Nov. 2025</span>
-                  <span class="text-secondary font-bold">Mobile Fraud Prevention</span>
-                </div>
-              </div>
-
-              <!-- Proyecto 3: Anthropic Claude Code Module -->
-              <div data-target-view="software" class="group cursor-pointer glass-panel p-6 rounded-3xl border border-outline-variant/20 hover:border-primary/50 transition-all">
-                <div class="aspect-[16/10] bg-surface-container-highest rounded-2xl mb-6 overflow-hidden relative shadow-lg">
-                  <div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/20 transition-colors duration-500 z-10"></div>
-                  <img src="/assets/quantum-hero-sphere.png" alt="Anthropic Claude Code" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                  <span class="absolute top-3 left-3 z-20 bg-tertiary text-on-tertiary font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase">Anthropic AI</span>
-                </div>
-                <div class="flex justify-between items-start mb-2">
-                  <div>
-                    <h3 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Claude Code — Anthropic</h3>
-                    <p class="text-on-surface-variant text-xs mt-1">Módulo "Claude in Action". Integración de inteligencia artificial avanzada y automatización en proyectos de código reales.</p>
-                  </div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-outline-variant/10 flex justify-between items-center text-xs font-mono text-outline">
-                  <span>Marzo 2026</span>
-                  <span class="text-tertiary font-bold">AI &amp; LLM Tooling</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="w-full py-12 border-t border-outline-variant/10 bg-surface-container-lowest relative">
-          <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-container-max mx-auto gap-6">
-            <div class="font-display text-lg font-bold text-on-surface">J.F.P.A</div>
-            <p class="text-sm text-on-surface-variant">© 2024 Jorge Fabrissio Pino Abril. Quantum Precision.</p>
-            <div class="flex gap-6">
-              <a href="#" class="text-on-surface-variant hover:text-primary text-sm transition-colors">GitHub</a>
-              <a href="#" class="text-on-surface-variant hover:text-primary text-sm transition-colors">LinkedIn</a>
-              <a href="#" class="text-on-surface-variant hover:text-primary text-sm transition-colors">Contact</a>
-            </div>
-          </div>
-        </footer>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- FRAME 2: PLATAFORMA DE PROYECTOS (DASHBOARD) -->
-      <!-- ========================================== -->
-      <section id="frame-dashboard" class="view-frame hidden-frame pt-24 min-h-screen quantum-gradient">
-        <div class="max-w-container-max mx-auto px-6 md:px-12 py-8">
-          <!-- Command Center Header -->
-          <div class="mb-10">
-            <h1 class="font-display text-3xl md:text-5xl font-extrabold text-on-surface leading-tight">
-              Good Morning, <span class="text-primary">Jorge</span> <span class="animate-bounce inline-block">👋</span>
-            </h1>
-            <p class="text-on-surface-variant mt-2 text-body-lg max-w-2xl">
-              Welcome to your command center. Here is the architectural status of your latest technical deployments.
-            </p>
-          </div>
-
-          <!-- Bento Grid Stats -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            <div class="glass-bg p-6 rounded-2xl glow-border flex flex-col justify-between h-40">
-              <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-primary text-3xl">account_tree</span>
-                <span class="text-[11px] text-primary font-mono bg-primary/10 px-2 py-0.5 rounded-full">+12% vs last month</span>
-              </div>
-              <div>
-                <p class="text-3xl font-bold text-on-surface">1,284</p>
-                <p class="text-xs text-on-surface-variant font-mono mt-1">Total Requests</p>
-              </div>
-            </div>
-
-            <div class="glass-bg p-6 rounded-2xl glow-border flex flex-col justify-between h-40">
-              <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-secondary text-3xl">sync</span>
-                <span class="text-[11px] text-secondary font-mono bg-secondary/10 px-2 py-0.5 rounded-full">+8.2% vs last month</span>
-              </div>
-              <div>
-                <p class="text-3xl font-bold text-on-surface">642</p>
-                <p class="text-xs text-on-surface-variant font-mono mt-1">In Progress</p>
-              </div>
-            </div>
-
-            <div class="glass-bg p-6 rounded-2xl glow-border flex flex-col justify-between h-40">
-              <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-tertiary text-3xl">task_alt</span>
-                <span class="text-[11px] text-tertiary font-mono bg-tertiary/10 px-2 py-0.5 rounded-full">+15.3% last month</span>
-              </div>
-              <div>
-                <p class="text-3xl font-bold text-on-surface">532</p>
-                <p class="text-xs text-on-surface-variant font-mono mt-1">Completed</p>
-              </div>
-            </div>
-
-            <div class="glass-bg p-6 rounded-2xl glow-border flex flex-col justify-between h-40">
-              <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-primary text-3xl">verified</span>
-                <span class="text-[11px] text-green-400 font-mono bg-green-500/10 px-2 py-0.5 rounded-full">Perfect Score</span>
-              </div>
-              <div>
-                <p class="text-3xl font-bold text-on-surface">98.6%</p>
-                <p class="text-xs text-on-surface-variant font-mono mt-1">SLA Compliance</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Main Dashboard Grid -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <!-- Service Requests Chart Mockup -->
-            <div class="lg:col-span-2 glass-bg rounded-2xl glow-border p-6 md:p-8 overflow-hidden relative">
-              <div class="flex justify-between items-center mb-6">
-                <div>
-                  <h3 class="font-display text-xl font-bold text-on-surface">Service Requests Overview</h3>
-                  <p class="text-xs text-on-surface-variant font-mono">Technical performance tracking for Q3</p>
-                </div>
-                <select class="bg-surface-container-high border border-outline-variant/30 rounded-lg text-xs text-on-surface px-3 py-1.5 focus:outline-none focus:border-primary">
-                  <option>This Week</option>
-                  <option>Last Month</option>
-                </select>
-              </div>
-
-              <!-- Bar chart visualization -->
-              <div class="w-full h-64 relative mt-6 flex items-end justify-between px-2 pt-10 pb-4 border-b border-outline-variant/20">
-                <div class="w-10 bg-primary/20 hover:bg-primary/40 h-28 rounded-t-lg transition-all group relative">
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-mono text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">120</span>
-                </div>
-                <div class="w-10 bg-primary/30 hover:bg-primary/50 h-36 rounded-t-lg transition-all group relative">
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-mono text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">160</span>
-                </div>
-                <div class="w-10 bg-primary/40 hover:bg-primary/60 h-48 rounded-t-lg transition-all group relative">
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-mono text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">210</span>
-                </div>
-                <div class="w-10 bg-primary/50 hover:bg-primary/70 h-56 rounded-t-lg transition-all group relative">
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-mono text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">230</span>
-                </div>
-                <div class="w-10 bg-primary/60 hover:bg-primary/80 h-44 rounded-t-lg transition-all group relative">
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-mono text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">180</span>
-                </div>
-                <div class="w-10 bg-primary hover:bg-primary-bright h-60 rounded-t-lg transition-all relative shadow-glow-violet">
-                  <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-2.5 py-0.5 rounded text-[11px] font-bold shadow-md whitespace-nowrap">245 Today</div>
-                </div>
-                <div class="w-10 bg-primary/20 hover:bg-primary/40 h-40 rounded-t-lg transition-all group relative">
-                  <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] font-mono text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">170</span>
-                </div>
-              </div>
-              <div class="flex justify-between mt-3 text-[10px] text-on-surface-variant uppercase font-mono tracking-widest px-2">
-                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-              </div>
-            </div>
-
-            <!-- Mis Proyectos Quick List -->
-            <div class="glass-bg rounded-2xl glow-border p-6 md:p-8">
-              <div class="flex justify-between items-center mb-6">
-                <h3 class="font-display text-xl font-bold text-on-surface">Mis Proyectos</h3>
-                <button data-target-view="web" class="text-xs text-primary font-bold hover:underline">View All</button>
-              </div>
-
-              <div class="space-y-4">
-                <div data-target-view="web" class="flex items-center gap-4 p-4 rounded-xl bg-surface-variant/20 hover:bg-surface-variant/40 transition-colors cursor-pointer group">
-                  <div class="w-11 h-11 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined text-xl">rocket_launch</span>
-                  </div>
-                  <div class="flex-1 overflow-hidden">
-                    <h4 class="font-bold text-on-surface text-sm group-hover:text-primary transition-colors truncate">Aether Engine</h4>
-                    <p class="text-xs text-on-surface-variant truncate">Core rendering pipeline v4.0</p>
-                  </div>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-secondary-container/50 text-secondary border border-secondary/30">In Progress</span>
-                </div>
-
-                <div data-target-view="mobile" class="flex items-center gap-4 p-4 rounded-xl bg-surface-variant/20 hover:bg-surface-variant/40 transition-colors cursor-pointer group">
-                  <div class="w-11 h-11 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary">
-                    <span class="material-symbols-outlined text-xl">cloud_done</span>
-                  </div>
-                  <div class="flex-1 overflow-hidden">
-                    <h4 class="font-bold text-on-surface text-sm group-hover:text-primary transition-colors truncate">Nexus OS</h4>
-                    <p class="text-xs text-on-surface-variant truncate">Distributed node management</p>
-                  </div>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant border border-outline-variant/30">Pending</span>
-                </div>
-
-                <div data-target-view="software" class="flex items-center gap-4 p-4 rounded-xl bg-surface-variant/20 hover:bg-surface-variant/40 transition-colors cursor-pointer group">
-                  <div class="w-11 h-11 rounded-lg bg-on-primary-container/20 flex items-center justify-center text-on-primary-container">
-                    <span class="material-symbols-outlined text-xl">grid_view</span>
-                  </div>
-                  <div class="flex-1 overflow-hidden">
-                    <h4 class="font-bold text-on-surface text-sm group-hover:text-primary transition-colors truncate">Quantum Dashboard</h4>
-                    <p class="text-xs text-on-surface-variant truncate">Real-time analytical UI kit</p>
-                  </div>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-green-500/20 text-green-400 border border-green-500/30">Resolved</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Proyectos Destacados Section -->
-          <div>
-            <h3 class="font-display text-2xl font-bold text-on-surface mb-6">Proyectos Destacados</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <!-- Card 1 -->
-              <div data-target-view="web" class="group glass-bg rounded-2xl glow-border overflow-hidden cursor-pointer">
-                <div class="h-44 relative overflow-hidden">
-                  <img src="/assets/aether-engine.jpg" alt="Aether Engine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                  <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-                  <span class="absolute top-3 right-3 bg-primary text-on-primary px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono">React</span>
-                </div>
-                <div class="p-6">
-                  <h4 class="font-display text-lg font-bold mb-2 text-on-surface">Aether Engine</h4>
-                  <p class="text-xs text-on-surface-variant mb-4 line-clamp-2">High-performance 3D rendering pipeline for real-time architectural simulations using WebGPU.</p>
-                  <div class="flex gap-2">
-                    <span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] text-on-surface-variant font-mono uppercase">TypeScript</span>
-                    <span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] text-on-surface-variant font-mono uppercase">WebGPU</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 2 -->
-              <div data-target-view="mobile" class="group glass-bg rounded-2xl glow-border overflow-hidden cursor-pointer">
-                <div class="h-44 relative overflow-hidden">
-                  <img src="/assets/nexus-os.jpg" alt="Nexus OS" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                  <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-                  <span class="absolute top-3 right-3 bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono">Native</span>
-                </div>
-                <div class="p-6">
-                  <h4 class="font-display text-lg font-bold mb-2 text-on-surface">Nexus OS Mobile</h4>
-                  <p class="text-xs text-on-surface-variant mb-4 line-clamp-2">A revolutionary distributed operating system layer designed for low-latency node synchronization.</p>
-                  <div class="flex gap-2">
-                    <span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] text-on-surface-variant font-mono uppercase">SwiftUI</span>
-                    <span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] text-on-surface-variant font-mono uppercase">Rust</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div data-target-view="software" class="group glass-bg rounded-2xl glow-border overflow-hidden cursor-pointer">
-                <div class="h-44 relative overflow-hidden">
-                  <img src="/assets/quantum-hero-sphere.png" alt="Software Kernel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                  <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-                  <span class="absolute top-3 right-3 bg-tertiary text-on-tertiary px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono">Rust</span>
-                </div>
-                <div class="p-6">
-                  <h4 class="font-display text-lg font-bold mb-2 text-on-surface">Nexus OS Kernel</h4>
-                  <p class="text-xs text-on-surface-variant mb-4 line-clamp-2">Microkernel-based system focusing on capability-based security and ultra-low latency IPC.</p>
-                  <div class="flex gap-2">
-                    <span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] text-on-surface-variant font-mono uppercase">Kernel</span>
-                    <span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] text-on-surface-variant font-mono uppercase">Security</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- FRAME 3: JF PINO ABRIL - PÁGINAS WEB       -->
-      <!-- ========================================== -->
-      <section id="frame-web" class="view-frame hidden-frame pt-24 min-h-screen">
-        <div class="max-w-container-max mx-auto px-6 md:px-12 py-8">
-          <header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <h1 class="font-display text-4xl md:text-5xl font-bold text-primary mb-2">Web Pages</h1>
-              <p class="text-on-surface-variant text-body-lg max-w-2xl">Architecting high-performance digital interfaces with React, Next.js, and advanced motion systems. Precision-engineered for technical excellence.</p>
-            </div>
-            <div class="glass-panel rounded-full px-5 py-2.5 flex items-center gap-3 border-primary/20 w-fit">
-              <span class="w-2.5 h-2.5 rounded-full bg-green-400 animate-ping"></span>
-              <span class="font-mono text-xs text-on-surface tracking-widest uppercase">Network Live</span>
-            </div>
-          </header>
-
-          <!-- Interactive Filters Bar (Owner Only) -->
-          <div data-role-req="owner" class="mb-10 glass-panel p-2.5 rounded-full flex items-center gap-2 overflow-x-auto no-scrollbar">
-            <span class="px-4 py-1.5 font-mono text-xs text-on-surface-variant border-r border-outline-variant/30 whitespace-nowrap">Filtros:</span>
-            <button data-filter="all" class="filter-btn-web px-5 py-1.5 rounded-full bg-primary text-on-primary font-bold text-xs transition-all shadow-glow-violet whitespace-nowrap">Todos</button>
-            <button data-filter="React" class="filter-btn-web px-5 py-1.5 rounded-full hover:bg-surface-variant/50 text-on-surface-variant font-medium text-xs transition-all whitespace-nowrap">React</button>
-            <button data-filter="Next.js" class="filter-btn-web px-5 py-1.5 rounded-full hover:bg-surface-variant/50 text-on-surface-variant font-medium text-xs transition-all whitespace-nowrap">Next.js</button>
-            <button data-filter="SaaS" class="filter-btn-web px-5 py-1.5 rounded-full hover:bg-surface-variant/50 text-on-surface-variant font-medium text-xs transition-all whitespace-nowrap">SaaS</button>
-          </div>
-
-          <!-- Web Projects Grid (2 Columns Grid Layout) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <!-- Project 1: Casa Vista Oceana (Deployed - Custom Domain) -->
-            <article class="web-card glass-panel rounded-3xl overflow-hidden group hover:shadow-[0_0_35px_rgba(139,92,246,0.3)] transition-all duration-500 border border-primary/30 flex flex-col justify-between" data-category="React Next.js">
-              <div>
-                <div class="aspect-[16/10] relative overflow-hidden bg-black">
-                  <img src="/assets/vista-oceana.jpg" alt="Casa Vista Oceana" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-50"></div>
-
-                  <div class="absolute top-4 right-4 z-20 bg-black/70 backdrop-blur-md border border-primary/40 text-primary px-3.5 py-1.5 rounded-full font-mono text-xs font-bold flex items-center gap-1.5 shadow-lg">
-                    <span class="material-symbols-outlined text-sm">link</span>
-                    <span>www.vistaoceana.net</span>
-                  </div>
-                </div>
-
-                <div class="p-6 md:p-8">
-                  <div class="flex items-center gap-2 text-xs font-mono text-primary mb-2">
-                    <span class="material-symbols-outlined text-sm">language</span>
-                    <span>Sitio Web &amp; Reservas</span>
-                  </div>
-
-                  <h3 class="font-display text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
-                    Casa Vista Oceana
-                  </h3>
-
-                  <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-light">
-                    Plataforma web desplegada bajo dominio propio registrado (<strong class="text-primary font-mono font-semibold">www.vistaoceana.net</strong>). Implementa motor de reservas directas con <strong class="text-on-surface font-medium">calendario en vivo e interactivo</strong>, <strong class="text-on-surface font-medium">modificación dinámica de fechas</strong> e integración multimonedas.
-                  </p>
-
-                  <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono text-xs">Dominio Propio</span>
-                    <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono text-xs">Calendario en Vivo</span>
-                    <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20 font-mono text-xs">Sistema de Modificación</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-6 md:p-8 pt-4 flex items-center justify-between border-t border-outline-variant/10 mt-auto">
-                <span class="font-mono text-xs text-primary font-semibold flex items-center gap-1.5">
-                  <span class="material-symbols-outlined text-sm">dns</span>
-                  <span>vistaoceana.net</span>
-                </span>
-
-                <a href="https://www.vistaoceana.net/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-primary text-on-primary font-bold rounded-full text-xs hover:shadow-glow-violet transition-all flex items-center gap-2 group/btn">
-                  <span>Visitar Sitio</span>
-                  <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">open_in_new</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Project 2: Pollería & Fast Food Pino (Deployed - Vercel) -->
-            <article class="web-card glass-panel rounded-3xl overflow-hidden group hover:shadow-[0_0_35px_rgba(139,92,246,0.3)] transition-all duration-500 border border-primary/30 flex flex-col justify-between" data-category="React Next.js">
-              <div>
-                <div class="aspect-[16/10] relative overflow-hidden bg-black">
-                  <img src="/assets/chicken-restaurant.png" alt="Pollería & Fast Food Pino" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-50"></div>
-
-                  <div class="absolute top-4 right-4 z-20 bg-black/70 backdrop-blur-md border border-red-500/40 text-red-400 px-3.5 py-1.5 rounded-full font-mono text-xs font-bold flex items-center gap-1.5 shadow-lg">
-                    <span class="material-symbols-outlined text-sm">restaurant</span>
-                    <span>Vercel Live</span>
-                  </div>
-                </div>
-
-                <div class="p-6 md:p-8">
-                  <div class="flex items-center gap-2 text-xs font-mono text-primary mb-2">
-                    <span class="material-symbols-outlined text-sm">local_dining</span>
-                    <span>Gastronomía &amp; Delivery</span>
-                  </div>
-
-                  <h3 class="font-display text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
-                    Pollería &amp; Fast Food Pino
-                  </h3>
-
-                  <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-light">
-                    Plataforma web gastronómica desplegada en Vercel (<strong class="text-primary font-mono font-semibold">paginaweb-chicken-restaurant.vercel.app</strong>). Menú digital interactivo, catálogo de combos, selector de locales y pedidos de alta conversión.
-                  </p>
-
-                  <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-mono text-xs">Vercel Deploy</span>
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono text-xs">Menú Digital</span>
-                    <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20 font-mono text-xs">Fast Food UX</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-6 md:p-8 pt-4 flex items-center justify-between border-t border-outline-variant/10 mt-auto">
-                <span class="font-mono text-xs text-outline font-semibold truncate max-w-[180px]">
-                  chicken-restaurant.vercel.app
-                </span>
-
-                <a href="https://paginaweb-chicken-restaurant.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-primary text-on-primary font-bold rounded-full text-xs hover:shadow-glow-violet transition-all flex items-center gap-2 group/btn">
-                  <span>Ver Sitio en Vercel</span>
-                  <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">open_in_new</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Project 3: Auto Partner Repuestos (Deployed - Vercel) -->
-            <article class="web-card glass-panel rounded-3xl overflow-hidden group hover:shadow-[0_0_35px_rgba(139,92,246,0.3)] transition-all duration-500 border border-primary/30 flex flex-col justify-between" data-category="React Next.js">
-              <div>
-                <div class="aspect-[16/10] relative overflow-hidden bg-black">
-                  <img src="/assets/repuestos-car.png" alt="Auto Partner Repuestos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-50"></div>
-
-                  <div class="absolute top-4 right-4 z-20 bg-black/70 backdrop-blur-md border border-blue-500/40 text-blue-400 px-3.5 py-1.5 rounded-full font-mono text-xs font-bold flex items-center gap-1.5 shadow-lg">
-                    <span class="material-symbols-outlined text-sm">directions_car</span>
-                    <span>Vercel Live</span>
-                  </div>
-                </div>
-
-                <div class="p-6 md:p-8">
-                  <div class="flex items-center gap-2 text-xs font-mono text-primary mb-2">
-                    <span class="material-symbols-outlined text-sm">build</span>
-                    <span>E-Commerce Automotriz</span>
-                  </div>
-
-                  <h3 class="font-display text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
-                    Auto Partner — Repuestos Automotrices
-                  </h3>
-
-                  <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-light">
-                    Catálogo y tienda virtual de repuestos de alta precisión desplegada en Vercel (<strong class="text-primary font-mono font-semibold">pagina-repuestos-car.vercel.app</strong>). Filtro inteligente por amortiguadores, palieres, resortes y bobinas.
-                  </p>
-
-                  <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-mono text-xs">Vercel Deploy</span>
-                    <span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono text-xs">Catálogo Interactivo</span>
-                    <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20 font-mono text-xs">Auto Parts</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-6 md:p-8 pt-4 flex items-center justify-between border-t border-outline-variant/10 mt-auto">
-                <span class="font-mono text-xs text-outline font-semibold truncate max-w-[180px]">
-                  repuestos-car.vercel.app
-                </span>
-
-                <a href="https://pagina-repuestos-car.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-primary text-on-primary font-bold rounded-full text-xs hover:shadow-glow-violet transition-all flex items-center gap-2 group/btn">
-                  <span>Ver Sitio en Vercel</span>
-                  <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">open_in_new</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Project 4: CRM Multichannel Platform (GitHub Repo - Not Deployed) -->
-            <article class="web-card glass-panel rounded-3xl overflow-hidden group hover:border-primary/40 transition-all duration-500 border border-outline-variant/20 flex flex-col justify-between" data-category="SaaS">
-              <div>
-                <div class="aspect-[16/10] relative overflow-hidden bg-black">
-                  <img src="/assets/aether-engine.jpg" alt="CRM Multichannel Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
-
-                  <div class="absolute top-4 right-4 z-20 bg-surface-container-high/80 backdrop-blur-md border border-outline-variant/30 text-on-surface-variant px-3.5 py-1.5 rounded-full font-mono text-xs font-bold flex items-center gap-1.5 shadow-lg">
-                    <span class="material-symbols-outlined text-sm">code</span>
-                    <span>GitHub Repo</span>
-                  </div>
-                </div>
-
-                <div class="p-6 md:p-8">
-                  <div class="flex items-center gap-2 text-xs font-mono text-outline mb-2">
-                    <span class="material-symbols-outlined text-sm">forum</span>
-                    <span>CRM Multicanal</span>
-                  </div>
-
-                  <h3 class="font-display text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
-                    CRM Multichannel Platform
-                  </h3>
-
-                  <p class="text-on-surface-variant text-sm leading-relaxed mb-6 font-light">
-                    Plataforma CRM multicanal full-stack para gestión de clientes, mensajes unificados, contenedorización en Docker y arquitectura escalable.
-                  </p>
-
-                  <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-mono text-xs">TypeScript</span>
-                    <span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-mono text-xs">Docker</span>
-                    <span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-mono text-xs">CRM Core</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-6 md:p-8 pt-4 flex items-center justify-between border-t border-outline-variant/10 mt-auto">
-                <span class="font-mono text-xs text-outline flex items-center gap-1">
-                  <span class="material-symbols-outlined text-sm">folder_zip</span>
-                  <span>Repositorio GitHub</span>
-                </span>
-
-                <a href="https://github.com/jorgeabrilpino-hash/crm-multichannel-platform" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-surface-container-high text-on-surface font-bold rounded-full text-xs hover:border-primary/40 border border-outline-variant/30 transition-all flex items-center gap-2">
-                  <span>Ver Código en GitHub</span>
-                  <span class="material-symbols-outlined text-sm">code</span>
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Architectural Stack Bento Grid -->
-          <section class="mt-16 mb-12">
-            <h2 class="font-display text-2xl font-bold text-primary mb-8 text-center">Architectural Stack</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div class="md:col-span-2 glass-panel p-8 rounded-2xl flex flex-col justify-between glow-border quantum-gradient">
-                <span class="material-symbols-outlined text-primary text-4xl mb-4">terminal</span>
-                <h4 class="font-bold text-xl mb-2 text-on-surface">Core Development</h4>
-                <p class="text-on-surface-variant text-sm">Leveraging the full potential of Next.js 14, TypeScript, and Rust-based tooling for lightning-fast performance and type-safe architecture.</p>
-              </div>
-              <div class="glass-panel p-8 rounded-2xl flex flex-col items-center justify-center text-center glow-border">
-                <span class="material-symbols-outlined text-tertiary text-4xl mb-2">architecture</span>
-                <span class="text-4xl font-bold text-tertiary font-mono">99.9%</span>
-                <p class="text-on-surface-variant font-mono text-xs uppercase tracking-widest mt-2">Uptime Core</p>
-              </div>
-              <div class="glass-panel p-8 rounded-2xl flex flex-col items-center justify-center text-center glow-border">
-                <span class="material-symbols-outlined text-secondary text-4xl mb-2">speed</span>
-                <span class="text-4xl font-bold text-secondary font-mono">&lt;100ms</span>
-                <p class="text-on-surface-variant font-mono text-xs uppercase tracking-widest mt-2">Latency Target</p>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- FRAME 4: JF PINO ABRIL - PROYECTOS MÓVILES -->
-      <!-- ========================================== -->
-      <section id="frame-mobile" class="view-frame hidden-frame pt-24 min-h-screen">
-        <div class="max-w-container-max mx-auto px-6 md:px-12 py-8">
-          <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
-            <div>
-              <h1 class="font-display text-4xl md:text-5xl font-bold text-primary">Mobile Projects</h1>
-              <p class="text-on-surface-variant text-body-lg max-w-2xl mt-2">Architecting fluid experiences across the mobile ecosystem. Explore our high-performance Flutter, React Native, and Swift infrastructure solutions.</p>
-            </div>
-            <button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:shadow-glow-violet transition-all text-xs">
-              <span class="material-symbols-outlined text-sm">add</span>
-              Request Build
-            </button>
-          </header>
-
-          <!-- Mobile Filters -->
-          <div class="flex flex-wrap gap-4 mb-10 items-center bg-glass-bg p-4 rounded-2xl border border-outline-variant/10">
-            <span class="font-mono text-xs text-primary/80 uppercase tracking-widest">Platform:</span>
-            <button class="mobile-filter-btn px-4 py-1.5 rounded-full bg-secondary-container/40 text-on-secondary-container border border-primary/30 text-xs font-mono">All Platforms</button>
-            <button class="mobile-filter-btn px-4 py-1.5 rounded-full glass-panel hover:bg-surface-variant/40 text-xs font-mono">iOS Native</button>
-            <button class="mobile-filter-btn px-4 py-1.5 rounded-full glass-panel hover:bg-surface-variant/40 text-xs font-mono">Android</button>
-            <button class="mobile-filter-btn px-4 py-1.5 rounded-full glass-panel hover:bg-surface-variant/40 text-xs font-mono">Cross-platform</button>
-          </div>
-
-          <!-- Mobile Cards Grid (Real GitHub Projects) -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <!-- Project 1: Arequipa Maps Android -->
-            <div class="glass-panel rounded-2xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 flex flex-col border border-primary/30">
-              <div class="aspect-[16/10] overflow-hidden relative bg-black">
-                <img src="/assets/nexus-os.jpg" alt="Arequipa Maps Android" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-transparent to-transparent opacity-60"></div>
-                <div class="absolute top-4 right-4 flex gap-2">
-                  <span class="bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase font-mono">Kotlin</span>
-                  <span class="bg-tertiary/20 backdrop-blur-md border border-tertiary/30 text-tertiary text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase font-mono">Google Maps</span>
-                </div>
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="font-display text-xl font-bold text-white mb-2">Arequipa Maps Android</h3>
-                <p class="text-on-surface-variant text-xs mb-6 leading-relaxed">Aplicación móvil nativa en Kotlin con Google Maps SDK para trazado de rutas, zonas de interés y marcadores interactivos en Arequipa.</p>
-                <div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-variant/10">
-                  <span class="text-xs font-mono text-outline">GitHub Repo</span>
-                  <a href="https://github.com/jorgeabrilpino-hash/arequipa-maps-android" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-primary font-bold text-xs group/btn">
-                    <span>Ver Código</span>
-                    <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 2: Android Quick Access Widget -->
-            <div class="glass-panel rounded-2xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 flex flex-col border border-outline-variant/20">
-              <div class="aspect-[16/10] overflow-hidden relative bg-black">
-                <img src="/assets/aether-engine.jpg" alt="Android Quick Access Widget" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-transparent to-transparent opacity-60"></div>
-                <div class="absolute top-4 right-4 flex gap-2">
-                  <span class="bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase font-mono">Kotlin</span>
-                  <span class="bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase font-mono">Jetpack Compose</span>
-                </div>
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="font-display text-xl font-bold text-white mb-2">Android Quick Access Widget</h3>
-                <p class="text-on-surface-variant text-xs mb-6 leading-relaxed">Widgets interactivos de acceso rápido desarrollados con Jetpack Compose y patrones reactivos para Android.</p>
-                <div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-variant/10">
-                  <span class="text-xs font-mono text-outline">GitHub Repo</span>
-                  <a href="https://github.com/jorgeabrilpino-hash/android-quick-access-widget" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-primary font-bold text-xs group/btn">
-                    <span>Ver Código</span>
-                    <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 3: Compose Controls Showcase -->
-            <div class="glass-panel rounded-2xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 flex flex-col border border-outline-variant/20">
-              <div class="aspect-[16/10] overflow-hidden relative bg-black">
-                <img src="/assets/quantum-hero-sphere.png" alt="Compose Controls Showcase" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-transparent to-transparent opacity-60"></div>
-                <div class="absolute top-4 right-4 flex gap-2">
-                  <span class="bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase font-mono">Android</span>
-                  <span class="bg-tertiary/20 backdrop-blur-md border border-tertiary/30 text-tertiary text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase font-mono">UI Design</span>
-                </div>
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="font-display text-xl font-bold text-white mb-2">Compose Controls Showcase</h3>
-                <p class="text-on-surface-variant text-xs mb-6 leading-relaxed">Sistema de layouts por cuadrantes y componentes de UI personalizados construidos en Kotlin.</p>
-                <div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-variant/10">
-                  <span class="text-xs font-mono text-outline">GitHub Repo</span>
-                  <a href="https://github.com/jorgeabrilpino-hash/compose-controls-showcase" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-primary font-bold text-xs group/btn">
-                    <span>Ver Código</span>
-                    <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- FRAME 5: JF PINO ABRIL - PROYECTOS DE SOFTWARE -->
-      <!-- ========================================== -->
-      <section id="frame-software" class="view-frame hidden-frame pt-24 min-h-screen">
-        <div class="max-w-container-max mx-auto px-6 md:px-12 py-8">
-          <header class="mb-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-              <div>
-                <span class="text-secondary font-mono text-xs uppercase tracking-widest">Repositorios GitHub</span>
-                <h1 class="font-display text-4xl md:text-5xl font-bold text-on-surface mt-1">Proyectos de Software</h1>
-                <p class="text-on-surface-variant text-body-lg max-w-2xl mt-3">Sistemas de backend empresarial, arquitectura limpia, inteligencia artificial y simuladores 3D.</p>
-              </div>
-            </div>
-
-            <!-- Bento Filter Section -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div class="md:col-span-1 glass-panel p-6 rounded-2xl quantum-gradient border border-outline-variant/20">
-                <h4 class="font-mono text-xs uppercase tracking-widest text-outline mb-3">Lenguajes</h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-mono">Java</span>
-                  <span class="px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 text-on-surface-variant text-xs font-mono">Python</span>
-                  <span class="px-3 py-1 rounded-full bg-surface-variant border border-outline-variant/30 text-on-surface-variant text-xs font-mono">TypeScript</span>
-                </div>
-              </div>
-              <div class="md:col-span-3 glass-panel p-6 rounded-2xl flex items-center overflow-x-auto no-scrollbar">
-                <h4 class="font-mono text-xs uppercase tracking-widest text-outline mr-6 whitespace-nowrap">Categorías:</h4>
-                <div class="flex gap-3">
-                  <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary-container/30 text-on-secondary-container border border-secondary/40 text-xs whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">terminal</span>
-                    Backend APIs
-                  </button>
-                  <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-variant/30 text-on-surface-variant border border-outline-variant/20 text-xs whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">3d_rotation</span>
-                    Simulation &amp; Graphics
-                  </button>
-                  <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-variant/30 text-on-surface-variant border border-outline-variant/20 text-xs whitespace-nowrap">
-                    <span class="material-symbols-outlined text-sm">security</span>
-                    Auth &amp; Security
-                  </button>
-                </div>
-              </div>
-            </div>
-          </header>
-
-          <!-- Software Cards Grid (Real GitHub Projects) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <!-- Card 1: Library Loan Management System -->
-            <div class="glass-panel rounded-2xl overflow-hidden border border-outline-variant/20 transition-all duration-500 flex flex-col group hover:border-primary/40">
-              <div class="h-44 relative overflow-hidden bg-black">
-                <img src="/assets/aether-engine.jpg" alt="Library Loan Management" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-deep to-transparent opacity-60"></div>
-                <span class="absolute top-4 right-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary px-3 py-1 rounded-full text-xs font-mono font-bold">Java / Maven</span>
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="font-display text-xl font-bold text-on-surface mb-2">Library Loan Management System</h3>
-                <p class="text-on-surface-variant text-xs mb-4 leading-relaxed">Sistema empresarial de gestión de préstamos bibliotecarios en Java con servicios de dominio, pruebas de integración y arquitectura limpia.</p>
-                <div class="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
-                  <span class="text-xs font-mono text-outline">GitHub Repo</span>
-                  <a href="https://github.com/jorgeabrilpino-hash/library-loan-management-java" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn">
-                    <span>Ver Código</span>
-                    <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Django Role-Based Auth API -->
-            <div class="glass-panel rounded-2xl overflow-hidden border border-outline-variant/20 transition-all duration-500 flex flex-col group hover:border-primary/40">
-              <div class="h-44 relative overflow-hidden bg-black">
-                <img src="/assets/quantum-hero-sphere.png" alt="Django Role Auth API" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-deep to-transparent opacity-60"></div>
-                <span class="absolute top-4 right-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary px-3 py-1 rounded-full text-xs font-mono font-bold">Python / Django</span>
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="font-display text-xl font-bold text-on-surface mb-2">Django Role-Based Auth API</h3>
-                <p class="text-on-surface-variant text-xs mb-4 leading-relaxed">API RESTful en Python y Django REST Framework con autenticación JWT, jerarquía de roles de usuario y permisos dinámicos.</p>
-                <div class="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
-                  <span class="text-xs font-mono text-outline">GitHub Repo</span>
-                  <a href="https://github.com/jorgeabrilpino-hash/django-role-auth-api" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn">
-                    <span>Ver Código</span>
-                    <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3: 3D Simulator Engine -->
-            <div class="glass-panel rounded-2xl overflow-hidden border border-outline-variant/20 transition-all duration-500 flex flex-col group hover:border-primary/40">
-              <div class="h-44 relative overflow-hidden bg-black">
-                <img src="/assets/nexus-os.jpg" alt="3D Simulator Engine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-deep to-transparent opacity-60"></div>
-                <span class="absolute top-4 right-4 bg-tertiary/20 backdrop-blur-md border border-tertiary/30 text-tertiary px-3 py-1 rounded-full text-xs font-mono font-bold">TypeScript / 3D</span>
-              </div>
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="font-display text-xl font-bold text-on-surface mb-2">3D Simulator Engine</h3>
-                <p class="text-on-surface-variant text-xs mb-4 leading-relaxed">Motor de simulación y gráficos 3D interactivos en TypeScript centrado en cálculos matriciales y transformaciones WebGL.</p>
-                <div class="mt-auto pt-4 border-t border-outline-variant/10 flex items-center justify-between">
-                  <span class="text-xs font-mono text-outline">GitHub Repo</span>
-                  <a href="https://github.com/jorgeabrilpino-hash/3D_simulator" target="_blank" rel="noopener noreferrer" class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn">
-                    <span>Ver Código</span>
-                    <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">code</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Section Footer -->
-          <footer class="w-full py-8 border-t border-outline-variant/10 bg-surface-container-lowest/50 rounded-2xl mt-12">
-            <div class="flex flex-col md:flex-row justify-between items-center px-6 max-w-container-max mx-auto gap-4">
-              <div class="font-display text-base font-bold text-on-surface">J.F.P.A</div>
-              <p class="text-xs text-on-surface-variant">© 2026 Jorge Fabrissio Pino Abril. Todos los derechos reservados.</p>
-              <div class="flex gap-4 text-xs font-mono">
-                <a href="https://github.com/jorgeabrilpino-hash" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors">GitHub</a>
-                <a href="mailto:jorgeabril.pino@gmail.com" class="text-on-surface-variant hover:text-primary transition-colors">Correo</a>
-              </div>
-            </div>
-          </footer>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- MODAL DIALOG: CONNECT / CONTACT CV -->
-    <div id="modal-connect" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-      <div class="glass-panel p-8 rounded-3xl max-w-lg w-full border border-primary/30 shadow-2xl relative glow-border">
-        <button id="modal-close" class="absolute top-6 right-6 text-on-surface-variant hover:text-primary transition-colors">
-          <span class="material-symbols-outlined text-2xl">close</span>
-        </button>
-        <h3 class="font-display text-2xl font-bold text-primary mb-1">Contacto Directo</h3>
-        <p class="text-on-surface-variant text-xs mb-6 font-mono">Jorge Fabrissio Pino Abril — Tecsup Arequipa</p>
-
-        <!-- Direct Contact Badges -->
-        <div class="space-y-3 mb-6 font-mono text-xs">
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container border border-outline-variant/20">
-            <span class="material-symbols-outlined text-primary text-xl">call</span>
-            <div>
-              <p class="text-outline text-[10px]">Teléfono / WhatsApp</p>
-              <a href="tel:+51937395614" class="font-bold text-on-surface hover:text-primary text-sm">+51 937 395 614</a>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container border border-outline-variant/20">
-            <span class="material-symbols-outlined text-secondary text-xl">mail</span>
-            <div>
-              <p class="text-outline text-[10px]">Correo Electrónico</p>
-              <a href="mailto:jorgeabril.pino@gmail.com" class="font-bold text-on-surface hover:text-primary text-sm">jorgeabril.pino@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container border border-outline-variant/20">
-            <span class="material-symbols-outlined text-tertiary text-xl">location_on</span>
-            <div>
-              <p class="text-outline text-[10px]">Ubicación &amp; Disponibilidad</p>
-              <p class="font-bold text-on-surface text-sm">Arequipa - Perú (Disponibilidad Inmediata)</p>
-            </div>
-          </div>
-        </div>
-        
-        <form id="connect-form" class="space-y-4">
-          <div>
-            <label class="block font-mono text-xs text-outline mb-1">Tu Nombre / Empresa</label>
-            <input type="text" required placeholder="Ingresa tu nombre..." class="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary">
-          </div>
-          <div>
-            <label class="block font-mono text-xs text-outline mb-1">Mensaje Directo</label>
-            <textarea rows="3" placeholder="Escribe tu propuesta o consulta de proyecto..." class="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-primary text-on-primary font-bold py-3 rounded-full text-sm hover:shadow-glow-violet transition-all">
-            Enviar Mensaje
-          </button>
-        </form>
       </div>
     </div>
+  </header>
 
-    <!-- MODAL LOGIN (JWT Auth) -->
-    <div id="modal-login" class="fixed inset-0 z-50 bg-background/80 backdrop-blur-md hidden items-center justify-center p-4">
-      <div class="bg-surface-container-high border border-outline-variant/30 rounded-3xl p-8 max-w-md w-full shadow-2xl relative">
-        <button id="modal-login-close" class="absolute top-6 right-6 p-2 text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-variant/40 transition-colors">
-          <span class="material-symbols-outlined text-xl">close</span>
-        </button>
-
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary border border-primary/40 shadow-glow-violet">
-            <span class="material-symbols-outlined text-2xl">shield_person</span>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg text-on-surface font-display">Acceso Propietario</h3>
-            <p class="text-outline text-xs font-mono">Autenticación con JWT &amp; Supabase</p>
-          </div>
-        </div>
-
-        <form id="login-form" class="space-y-4">
-          <div id="login-error" class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono"></div>
-
-          <div>
-            <label class="block font-mono text-xs text-outline mb-1">Correo Electrónico</label>
-            <input id="login-email" type="email" required placeholder="pino.abril@dev.io" value="pino.abril@dev.io" class="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary font-mono">
-          </div>
-
-          <div>
-            <label class="block font-mono text-xs text-outline mb-1">Contraseña</label>
-            <input id="login-password" type="password" required placeholder="••••••••" value="admin123" class="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary font-mono">
-          </div>
-
-          <button type="submit" id="btn-submit-login" class="w-full bg-primary text-on-primary font-bold py-3 rounded-full text-sm hover:shadow-glow-violet transition-all flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined text-sm">login</span>
-            Ingresar como Administrador
-          </button>
-        </form>
-      </div>
-    </div>
-
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Menú móvil">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#stack">Stack</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </div>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top">
+      <div class="hero__bg" aria-hidden="true">
+        <img class="hero__sphere" src="/assets/hero-sphere.webp" alt="" />
+        <div class="hero__glow"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="container hero__content">
+        <p class="hero__status" data-hero>
+          <span class="dot"></span> Disponible para prácticas y proyectos · Arequipa, Perú
+        </p>
+
+        <h1 class="hero__title" aria-label="Jorge Pino Abril">
+          <span class="line"><span class="split" data-split>Jorge</span></span>
+          <span class="line"><span class="split" data-split>Pino Abril</span><span class="accent" data-split-dot>.</span></span>
+        </h1>
+
+        <p class="hero__lead" data-hero>
+          Desarrollador de software enfocado en <strong>backend e inteligencia artificial aplicada</strong>.
+          Construyo productos completos, de la idea al despliegue: contabilidad automatizada, seguridad vial,
+          educación y detección de fraudes por voz.
+        </p>
+
+        <div class="hero__cta" data-hero>
+          <a href="#proyectos" class="btn btn--primary" data-magnetic>
+            Ver proyectos
+            <svg class="icon"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn--ghost" data-magnetic>Hablemos</a>
+        </div>
+
+        <dl class="hero__stats" data-hero>
+          <div><dt><span data-count="6">6</span></dt><dd>productos desplegados</dd></div>
+          <div><dt><span data-count="4">4</span></dt><dd>hackathons</dd></div>
+          <div><dt><span data-count="9">9</span></dt><dd>certificaciones</dd></div>
+          <div><dt>Décimo</dt><dd>superior en Tecsup</dd></div>
+        </dl>
+      </div>
+
+      <a href="#sobre-mi" class="hero__scroll" aria-label="Bajar a Sobre mí">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Python</span><span>Next.js</span><span>React</span><span>TypeScript</span><span>Django</span><span>Java</span>
+        <span>PostgreSQL</span><span>MongoDB</span><span>Flutter</span><span>Three.js</span><span>Gemma</span><span>Claude Code</span>
+        <span>Python</span><span>Next.js</span><span>React</span><span>TypeScript</span><span>Django</span><span>Java</span>
+        <span>PostgreSQL</span><span>MongoDB</span><span>Flutter</span><span>Three.js</span><span>Gemma</span><span>Claude Code</span>
+      </div>
+    </div>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="sobre-mi">
+      <div class="container about__grid">
+        <div class="about__visual" data-reveal>
+          <img src="/assets/about-visual.webp" alt="Ilustración abstracta de un rostro digital en tonos violeta" loading="lazy" width="800" height="800" />
+          <div class="about__badge">
+            <img src="/assets/wolf.webp" alt="" width="24" height="32" />
+            <span>Tecsup · Diseño y Desarrollo de Software</span>
+          </div>
+        </div>
+
+        <div class="about__text">
+          <p class="eyebrow" data-reveal>01 — Sobre mí</p>
+          <h2 class="section__title" data-reveal>Convierto problemas reales en <em>software que funciona</em>.</h2>
+          <p data-reveal>
+            Soy estudiante de último año de <strong>Diseño y Desarrollo de Software en Tecsup</strong> y
+            pertenezco al décimo superior de mi promoción. Me enfoco en backend, inteligencia artificial y
+            ciencia de datos, con Python como lenguaje principal.
+          </p>
+          <p data-reveal>
+            Trabajo con Scrum y Kanban, lideré el equipo de diseño UX/UI de un proyecto académico y competí en
+            cuatro hackathons en equipos multidisciplinarios. Uso agentes de IA como Claude Code para
+            prototipar, depurar y llevar a producción en menos tiempo, sin dejar de entender cada línea.
+          </p>
+
+          <ul class="facts" data-reveal>
+            <li><span>Ubicación</span><strong>Arequipa, Perú</strong></li>
+            <li><span>Disponibilidad</span><strong class="ok">Inmediata</strong></li>
+            <li><span>Enfoque</span><strong>Backend · IA · Datos</strong></li>
+            <li><span>Lenguaje principal</span><strong>Python</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section projects" id="proyectos">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-reveal>02 — Proyectos</p>
+            <h2 class="section__title" data-reveal>Productos en producción</h2>
+            <p class="section__sub" data-reveal>Seis productos desplegados y abiertos al público. Cada uno resuelve un problema concreto del contexto peruano.</p>
+          </div>
+
+          <div class="filters" role="group" aria-label="Filtrar proyectos" data-reveal>
+            <button class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
+            <button class="filter" data-filter="ia" aria-pressed="false">IA aplicada</button>
+            <button class="filter" data-filter="educacion" aria-pressed="false">Educación</button>
+            <button class="filter" data-filter="plataforma" aria-pressed="false">Plataformas</button>
+          </div>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <!-- ContaAI -->
+          <article class="project project--wide" data-tags="ia plataforma">
+            <a class="project__media" href="https://contaai-mu.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <div class="browser"><i></i><i></i><i></i><span>contaai-mu.vercel.app</span></div>
+              <img src="/assets/projects/contaai.jpg" alt="" loading="lazy" width="1200" height="750" />
+            </a>
+            <div class="project__body">
+              <p class="project__kicker">Fintech · Gemma 4 Challenge, DEV.to 2026</p>
+              <h3 class="project__title">ContaAI</h3>
+              <p class="project__desc">Asistente contable para contadores y MYPEs peruanas. Lee facturas y boletas con OCR, extrae RUC, montos y fechas, y clasifica cada comprobante en su cuenta del PCGE usando Google Gemma 4. Soporta varias empresas por cuenta con datos aislados.</p>
+              <ul class="tags"><li>Next.js</li><li>Gemma 4</li><li>OCR</li><li>Multiempresa</li></ul>
+              <a class="project__link" href="https://contaai-mu.vercel.app/" target="_blank" rel="noopener noreferrer">Ver en vivo <svg class="icon"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+
+          <!-- ChillDrive -->
+          <article class="project" data-tags="ia">
+            <a class="project__media" href="https://chill-drive.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <div class="browser"><i></i><i></i><i></i><span>chill-drive.vercel.app</span></div>
+              <img src="/assets/projects/chilldrive.jpg" alt="" loading="lazy" width="1200" height="750" />
+            </a>
+            <div class="project__body">
+              <p class="project__kicker">Visión computacional · Feria Innovadora Tecsup</p>
+              <h3 class="project__title">ChillDrive</h3>
+              <p class="project__desc">Monitoreo de conductores de flotas. La IA detecta frenadas bruscas, aceleraciones, giros y uso del celular en el dispositivo, en menos de un segundo y sin internet, y asigna un puntaje de 0 a 100 canjeable por premios de aliados.</p>
+              <ul class="tags"><li>Visión computacional</li><li>Offline-first</li><li>Next.js</li></ul>
+              <a class="project__link" href="https://chill-drive.vercel.app/" target="_blank" rel="noopener noreferrer">Ver en vivo <svg class="icon"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+
+          <!-- Qillqa -->
+          <article class="project" data-tags="ia educacion">
+            <a class="project__media" href="https://qillqa.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <div class="browser"><i></i><i></i><i></i><span>qillqa.vercel.app</span></div>
+              <img src="/assets/projects/qillqa.jpg" alt="" loading="lazy" width="1200" height="750" />
+            </a>
+            <div class="project__body">
+              <p class="project__kicker">EdTech · Hackathon NEXIA 2026, GDG Arequipa</p>
+              <h3 class="project__title">Qillqa</h3>
+              <p class="project__desc">Copiloto pedagógico que se integra al aula virtual del colegio. A partir de la ficha de cada alumno y la sesión de clase, genera clubes y actividades personalizadas sin que el docente salga de su plataforma.</p>
+              <ul class="tags"><li>IA generativa</li><li>Educación</li><li>Integración LMS</li></ul>
+              <a class="project__link" href="https://qillqa.vercel.app/" target="_blank" rel="noopener noreferrer">Ver en vivo <svg class="icon"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+
+          <!-- EchoTrap -->
+          <article class="project project--wide" data-tags="ia">
+            <a class="project__media" href="https://echo-trap-web.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <div class="browser"><i></i><i></i><i></i><span>echo-trap-web.vercel.app</span></div>
+              <img src="/assets/projects/echotrap.jpg" alt="" loading="lazy" width="1200" height="750" />
+            </a>
+            <div class="project__body">
+              <p class="project__kicker">Ciberseguridad · Audio e IA</p>
+              <h3 class="project__title">EchoTrap</h3>
+              <p class="project__desc">Detector de estafas telefónicas con voz clonada por IA. Analiza la llamada en tiempo real, indica si la voz es sintética y avisa a un contacto de confianza cuando la conversación se vuelve peligrosa. No requiere registro.</p>
+              <ul class="tags"><li>Detección de deepfakes</li><li>Tiempo real</li><li>Next.js</li></ul>
+              <a class="project__link" href="https://echo-trap-web.vercel.app/" target="_blank" rel="noopener noreferrer">Ver en vivo <svg class="icon"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+
+          <!-- TalentoPrueba -->
+          <article class="project" data-tags="ia plataforma">
+            <a class="project__media" href="https://mvp-talentoperu.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <div class="browser"><i></i><i></i><i></i><span>mvp-talentoperu.vercel.app</span></div>
+              <img src="/assets/projects/talentoprueba.jpg" alt="" loading="lazy" width="1200" height="750" />
+            </a>
+            <div class="project__body">
+              <p class="project__kicker">Empleabilidad · Búsqueda de talento</p>
+              <h3 class="project__title">TalentoPrueba</h3>
+              <p class="project__desc">Plataforma donde estudiantes y egresados peruanos resuelven retos reales de empresas. La IA evalúa cada entrega y construye un Perfil de Evidencia verificado que los reclutadores pueden consultar.</p>
+              <ul class="tags"><li>Next.js</li><li>Evaluación con IA</li><li>MVP</li></ul>
+              <a class="project__link" href="https://mvp-talentoperu.vercel.app/" target="_blank" rel="noopener noreferrer">Ver en vivo <svg class="icon"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+
+          <!-- Hora de la IA -->
+          <article class="project" data-tags="educacion plataforma">
+            <a class="project__media" href="https://horadelaia.vercel.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <div class="browser"><i></i><i></i><i></i><span>horadelaia.vercel.app</span></div>
+              <img src="/assets/projects/horadelaia.jpg" alt="" loading="lazy" width="1200" height="750" />
+            </a>
+            <div class="project__body">
+              <p class="project__kicker">Campaña nacional · Perú 2026</p>
+              <h3 class="project__title">La Hora de la IA</h3>
+              <p class="project__desc">Sitio oficial de la campaña educativa de Code en mi Cole e Intecnia Corp, parte de la iniciativa global Hour of AI. Inscripción de colegios y empresas, cronograma por etapas y cuenta regresiva al evento.</p>
+              <ul class="tags"><li>Next.js</li><li>Formularios</li><li>Landing</li></ul>
+              <a class="project__link" href="https://horadelaia.vercel.app/" target="_blank" rel="noopener noreferrer">Ver en vivo <svg class="icon"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Private projects -->
+        <div class="private">
+          <p class="eyebrow" data-reveal>En desarrollo · código privado</p>
+          <div class="private__grid">
+            <article class="private-card" data-reveal>
+              <div class="private-card__art private-card__art--mobile" aria-hidden="true">
+                <div class="phone"><span></span><span></span><span></span></div>
+              </div>
+              <div>
+                <span class="badge"><svg class="icon"><use href="#i-lock"/></svg> Privado</span>
+                <h3>PacoKipu</h3>
+                <p>App móvil para criadores de alpacas y llamas del sur andino. Funciona sin conexión en el campo: ofertas de fibra, avisos de acopio y registro genético del rebaño, con sincronización automática al volver la señal.</p>
+                <ul class="tags"><li>Flutter</li><li>Offline-first</li><li>.NET API</li></ul>
+              </div>
+            </article>
+
+            <article class="private-card" data-reveal>
+              <div class="private-card__art private-card__art--3d" aria-hidden="true">
+                <div class="cube"><span></span><span></span><span></span></div>
+              </div>
+              <div>
+                <span class="badge"><svg class="icon"><use href="#i-lock"/></svg> Privado</span>
+                <h3>Chaim 3D</h3>
+                <p>Proyecto de experiencias 3D interactivas en la web, en desarrollo bajo acuerdo de confidencialidad. Los detalles se compartirán cuando se publique.</p>
+                <ul class="tags"><li>3D en la web</li><li>Three.js</li></ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section experience" id="experiencia">
+      <div class="container experience__grid">
+        <div class="experience__intro">
+          <p class="eyebrow" data-reveal>03 — Experiencia</p>
+          <h2 class="section__title" data-reveal>Lo que he construido y liderado</h2>
+          <p class="section__sub" data-reveal>Experiencia formativa en Tecsup y proyectos individuales con entrega real.</p>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__rail" aria-hidden="true"><div class="timeline__progress"></div></div>
+          <ol>
+            <li class="timeline__item" data-reveal>
+              <time>Jun. 2026</time>
+              <h3>Simulación 3D de contingencia: transporte de combustible</h3>
+              <p class="timeline__role">Desarrollador · proyecto individual</p>
+              <p>Simulación interactiva en Three.js de escenarios de riesgo para camiones cisterna con combustible peligroso. Modelé el entorno y la lógica de eventos para representar los protocolos de respuesta ante incidentes.</p>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <time>2026-I</time>
+              <h3>ChillDrive · Feria Innovadora Tecsup</h3>
+              <p class="timeline__role">Desarrollador · Experiencias Formativas en Situaciones Reales de Trabajo</p>
+              <p>Desarrollé ChillDrive en el módulo III del programa, con 96 horas de formación práctica, y lo presenté en la Feria Innovadora de Tecsup como solución de visión computacional para flotas empresariales.</p>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <time>Set. — Nov. 2025</time>
+              <h3>Proyecto Convento Santa Teresa · Tecsup</h3>
+              <p class="timeline__role">Líder de diseño UX/UI</p>
+              <p>Coordiné al equipo de diseño y desarrollo del módulo de alquileres. Prototipé en Figma los formularios y tablas de registro, participé en el análisis de requerimientos y en los diagramas entidad-relación, y mantuve alineados a diseñadores y desarrolladores.</p>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <time>Mar. 2024 — Dic. 2026</time>
+              <h3>Tecsup · Diseño y Desarrollo de Software</h3>
+              <p class="timeline__role">Formación profesional · décimo superior</p>
+              <p>Carrera técnica con enfoque en ingeniería de software, bases de datos, desarrollo web y móvil, y metodologías ágiles.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMMUNITY ===================== -->
+    <section class="section community" id="comunidad">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-reveal>04 — Comunidad</p>
+            <h2 class="section__title" data-reveal>Hackathons y eventos</h2>
+            <p class="section__sub" data-reveal>Donde aprendo a entregar bajo presión, en equipo y con gente de otras disciplinas.</p>
+          </div>
+        </div>
+
+        <div class="event-grid">
+          <article class="event" data-reveal>
+            <p class="event__meta"><span>Jul. 2026</span><span><svg class="icon"><use href="#i-pin"/></svg> Arequipa</span></p>
+            <h3>FLIT 2026</h3>
+            <p class="event__role">Voluntario oficial</p>
+            <p>Festival Latinoamericano de Innovación y Tecnología. Apoyo logístico y atención a participantes durante los cinco días del evento, con credencial digital verificable.</p>
+          </article>
+          <article class="event" data-reveal>
+            <p class="event__meta"><span>Jul. 2026</span><span><svg class="icon"><use href="#i-pin"/></svg> Arequipa</span></p>
+            <h3>Arequipa Data Fest 2026</h3>
+            <p class="event__role">Participante · ACM Student Chapter UNSA</p>
+            <p>Evento de la comunidad de datos e inteligencia artificial organizado por el Comité de IA de ACM UNSA.</p>
+          </article>
+          <article class="event event--highlight" data-reveal>
+            <p class="event__meta"><span>Jun. 2026</span><span><svg class="icon"><use href="#i-pin"/></svg> Arequipa</span></p>
+            <h3>Hackathon NEXIA 2026</h3>
+            <p class="event__role">Equipo QILLQA · Google Developer Groups</p>
+            <p>Construimos Qillqa, un copiloto pedagógico con IA, en un equipo multidisciplinario de la comunidad GDG Arequipa.</p>
+          </article>
+          <article class="event" data-reveal>
+            <p class="event__meta"><span>Abr. 2026</span><span><svg class="icon"><use href="#i-pin"/></svg> Arequipa</span></p>
+            <h3>Hackathon Jebi 2026</h3>
+            <p class="event__role">Participante · powered by FLIT</p>
+            <p>Propuesta tecnológica en equipo durante la hackathon realizada en la Universidad La Salle.</p>
+          </article>
+          <article class="event" data-reveal>
+            <p class="event__meta"><span>Oct. — Nov. 2025</span><span><svg class="icon"><use href="#i-pin"/></svg> Lima</span></p>
+            <h3>Perú Hub Digital Universitario</h3>
+            <p class="event__role">Cyber Challenge · representando a Tecsup</p>
+            <p>Hackathon de ciberseguridad «Roba el control, no los datos». Propuse una solución para prevenir fraudes en dispositivos móviles.</p>
+          </article>
+          <article class="event" data-reveal>
+            <p class="event__meta"><span>Ago. 2026</span><span>Virtual</span></p>
+            <h3>Ingeniería Sin Fronteras</h3>
+            <p class="event__role">IEEE WIE UNSA · certificado de reconocimiento</p>
+            <p>Jornada académica y ciclo de charlas sobre ingeniería con impacto social.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STACK & CERTS ===================== -->
+    <section class="section stack" id="stack">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-reveal>05 — Stack y formación</p>
+            <h2 class="section__title" data-reveal>Herramientas que uso a diario</h2>
+          </div>
+        </div>
+
+        <div class="skills">
+          <div class="skill-group" data-reveal>
+            <h3>Lenguajes</h3>
+            <ul>
+              <li class="lvl-adv">Python <small>avanzado</small></li>
+              <li>JavaScript / TypeScript</li>
+              <li>Java</li>
+              <li>C#</li>
+              <li>HTML / CSS</li>
+            </ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Frameworks</h3>
+            <ul>
+              <li>Next.js</li>
+              <li>React</li>
+              <li>Django</li>
+              <li>Laravel</li>
+              <li>Flutter</li>
+              <li>Three.js</li>
+            </ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Bases de datos</h3>
+            <ul>
+              <li>PostgreSQL</li>
+              <li>MongoDB</li>
+              <li>MySQL</li>
+              <li>SQLite</li>
+            </ul>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Herramientas y método</h3>
+            <ul>
+              <li class="lvl-adv">Claude Code <small>avanzado</small></li>
+              <li>Git / GitHub</li>
+              <li>Docker</li>
+              <li>Figma</li>
+              <li>Scrum · Kanban</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="certs__title" data-reveal>Certificaciones</h3>
+        <ul class="certs">
+          <li data-reveal><span class="certs__name">Claude Code in Action</span><span class="certs__org">Anthropic</span><span class="certs__date">Mar. 2026</span></li>
+          <li data-reveal><span class="certs__name">Scrum Fundamentals Certified (SFC)</span><span class="certs__org">SCRUMstudy</span><span class="certs__date">Ene. 2026</span></li>
+          <li data-reveal><span class="certs__name">Kanban Essentials with AI Certified (KEC)</span><span class="certs__org">Kanbanstudy</span><span class="certs__date">Ene. 2026</span></li>
+          <li data-reveal><span class="certs__name">Jornadas de Data Science con IA</span><span class="certs__org">BIG School</span><span class="certs__date">May. 2026</span></li>
+          <li data-reveal><span class="certs__name">Cybersecurity Express</span><span class="certs__org">Kinedrik · Open Learning</span><span class="certs__date">May. 2026</span></li>
+          <li data-reveal><span class="certs__name">Desarrollo con IA: de 0 a producción</span><span class="certs__org">BIG School</span><span class="certs__date">Mar. 2026</span></li>
+          <li data-reveal><span class="certs__name">PCAP: Programming Essentials in Python</span><span class="certs__org">Cisco Networking Academy</span><span class="certs__date">Set. 2023</span></li>
+          <li data-reveal><span class="certs__name">Introduction to Cybersecurity</span><span class="certs__org">Cisco Networking Academy</span><span class="certs__date">Set. 2022</span></li>
+          <li data-reveal><span class="certs__name">Get Connected</span><span class="certs__org">Cisco Networking Academy</span><span class="certs__date">May. 2021</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contacto">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow" data-reveal>06 — Contacto</p>
+        <h2 class="contact__title" data-reveal>¿Tienes un proyecto<br />o una vacante? <span class="accent">Hablemos.</span></h2>
+
+        <div class="contact__actions" data-reveal>
+          <a class="btn btn--primary btn--lg" href="mailto:jorgeabril.pino@gmail.com" data-magnetic>
+            <svg class="icon"><use href="#i-mail"/></svg> Escríbeme
+          </a>
+          <button class="btn btn--ghost btn--lg" id="copy-email" type="button" data-email="jorgeabril.pino@gmail.com">
+            <svg class="icon"><use href="#i-copy"/></svg> <span>jorgeabril.pino@gmail.com</span>
+          </button>
+        </div>
+
+        <ul class="contact__links" data-reveal>
+          <li><a href="https://wa.me/51937395614" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg> WhatsApp · +51 937 395 614</a></li>
+          <li><a href="https://www.linkedin.com/in/abril-pino" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-linkedin"/></svg> LinkedIn</a></li>
+          <li><a href="https://github.com/jorgeabrilpino-hash" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> GitHub</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Jorge Fabrissio Pino Abril</span>
+      <span>Hecho con Vite y GSAP · Arequipa, Perú</span>
+      <a href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
